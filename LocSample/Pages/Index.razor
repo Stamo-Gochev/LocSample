@@ -1,8 +1,14 @@
 ﻿@page "/"
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Index> Loc
 
+@using RazorClassLibrary1.Components
+
 <h1>@Loc["Greetings"]</h1>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<h1>Localization from custom component</h1>
+
+<LocalizedComponent></LocalizedComponent>

@@ -21,9 +21,15 @@ namespace LocSample
             var host = builder.Build();
             var jsInterop = host.Services.GetRequiredService<IJSRuntime>();
             var result = await jsInterop.InvokeAsync<string>("blazorCulture.get");
+
             if (result != null)
             {
+                Console.WriteLine("interop culture result: " + result);
+
                 var culture = new CultureInfo(result);
+
+                Console.WriteLine("name: " + culture.Name);
+
                 CultureInfo.DefaultThreadCurrentCulture = culture;
                 CultureInfo.DefaultThreadCurrentUICulture = culture;
             }
